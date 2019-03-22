@@ -24,10 +24,10 @@ CREATE TABLE IF NOT EXISTS `tupperviny`.`clients` (
   `idClients` INT(11) NOT NULL AUTO_INCREMENT,
   `Client_name` VARCHAR(255) NULL DEFAULT NULL,
   `deve` TINYINT(1) NULL DEFAULT NULL,
-  `qntDeve` DECIMAL(10,0) NULL DEFAULT NULL,
+  `qntDeve` DECIMAL(10,2) NULL DEFAULT NULL,
   PRIMARY KEY (`idClients`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 3
+AUTO_INCREMENT = 5
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -38,11 +38,11 @@ CREATE TABLE IF NOT EXISTS `tupperviny`.`products` (
   `CodProd` VARCHAR(255) NOT NULL,
   `Prod_name` VARCHAR(255) NULL DEFAULT NULL,
   `Prod_Detail` VARCHAR(255) NULL DEFAULT NULL,
-  `Prod_Val` DECIMAL(10,0) NULL DEFAULT NULL,
+  `Prod_val` DECIMAL(10,2) NULL DEFAULT NULL,
   `Prod_qtd` INT(11) NULL DEFAULT NULL,
   `clients_idClients` INT(11) NULL DEFAULT NULL,
   PRIMARY KEY (`CodProd`),
-  INDEX `fk_products_clients_idx` (`clients_idClients` ASC) VISIBLE,
+  INDEX `fk_products_clients_idx` (`clients_idClients` ASC),
   CONSTRAINT `fk_products_clients`
     FOREIGN KEY (`clients_idClients`)
     REFERENCES `tupperviny`.`clients` (`idClients`))
@@ -53,3 +53,6 @@ DEFAULT CHARACTER SET = utf8;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+use tupperviny;
+show tables;

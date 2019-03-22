@@ -16,16 +16,15 @@ namespace roledoViny
         public newBuy()
         {
             InitializeComponent();
-            
-        }
 
+        }
 
         private MySqlConnection conn;
         private string server;
         private string database;
         private string username;
         private string password;
-                
+
         private void Initialize()
         {
             server = "localhost";
@@ -42,6 +41,8 @@ namespace roledoViny
         {
             Initialize();
             addThings();
+
+            
 
         }
 
@@ -61,42 +62,67 @@ namespace roledoViny
             cbbNames.DisplayMember = "Client_name";
             cbbNames.DataSource = dt;
 
-
             MySqlDataAdapter sda = new MySqlDataAdapter("SELECT Prod_name,Prod_Val FROM products", conn);
-                
-                    //Fill the DataTable with records from Table.
-                    DataTable table = new DataTable();
-                    sda.Fill(table);
 
-                    //Assign DataTable as DataSource.
-                    clbProds.DataSource = table;
-                    clbProds.DisplayMember = "Prod_name";
-                    clbProds.ValueMember = "Prod_Val";
+            //Fill the DataTable with records from Table.
+            DataTable table = new DataTable();
+            sda.Fill(table);
 
-
-            
+            //Assign DataTable as DataSource.
+            clbProds.DataSource = table;
+            clbProds.DisplayMember = "Prod_name";
+            clbProds.ValueMember = "Prod_Val";
 
             conn.Close();
 
-
         }
 
-        private void clbProds_SelectedIndexChanged(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
             
-            string a = clbProds.SelectedValue.ToString();
-            try
-            {
-                decimal account = decimal.Parse(clbProds.SelectedValue.ToString());
-                account = decimal.Parse(a);
-                decimal total = 0;
-                total += account;
+        }
 
-                label1.Text = total.ToString();
-            }catch(Exception ex)
-            {
+        Database db = new Database();
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            double total = buy();
+
+            if(MessageBox.Show("o resultado da compra é de " + total.ToString(), "Doris", MessageBoxButtons.OKCancel, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1) == DialogResult.OK){
+                MessageBox.Show(db.updateBuy(total,cbbNames.Text,true));
             }
+        }
+
+        private double buy()
+        {
+            int i;
+            string s;
+
+            double total = 0;
+
+            s = "Checked items:\n";
+            for (i = 0; i <= (clbProds.Items.Count - 1); i++)
+            {
+                if (clbProds.GetItemChecked(i))
+                {
+                    s = s + "Item " + (i + 1).ToString() + " = " + clbProds.Items[i].ToString() + "\n";
+                }
+            }
+            //MessageBox.Show(s);
+
+
+            foreach (var item in clbProds.CheckedItems)
+            {
+                var row = (item as DataRowView).Row;
+                string a = row["Prod_val"].ToString();
+                total = total + double.Parse(a);
+                //MessageBox.Show(row["Prod_name"] + ": " + row["Prod_Val"]);
+
+                //MessageBox.Show(total.ToString());
+            }
+
+            return total;
+
         }
     }
 }

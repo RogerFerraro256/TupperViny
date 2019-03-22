@@ -50,6 +50,8 @@ namespace roledoViny
             }
         }
 
+        
+
 
         private void Initialize()
         {
@@ -63,11 +65,12 @@ namespace roledoViny
             conn = new MySqlConnection(connectionString);
         }
 
-        public bool newProduct(string produto, string detalhe, string codigo, int qtd, decimal valor)
+        public bool newProduct(string produto, string detalhe, string codigo, int qtd, double valor)
         {
-
+            string value = valor.ToString();
+            value = value.Replace(',', '.');
             OpenConnection();
-            string sql = string.Format("INSERT INTO products(CodProd,Prod_name,Prod_Detail,Prod_val,Prod_qtd) VALUES('{0}','{1}','{2}',{3},{4});",codigo,produto,detalhe,valor,qtd);
+            string sql = string.Format("INSERT INTO products(CodProd,Prod_name,Prod_Detail,Prod_val,Prod_qtd) VALUES('{0}','{1}','{2}','{3}',{4});",codigo,produto,detalhe,value,qtd);
 
             try
             {
@@ -83,11 +86,37 @@ namespace roledoViny
 
         }
 
+        public string updateBuy(double value,string name, bool deve)
+        {
+            string valor = value.ToString();
+            valor = valor.Replace(',', '.');
+
+
+            OpenConnection();
+            string sql = string.Format("UPDATE clients SET deve={0},qntDeve='{1}' where Client_name='{2}';", deve, valor,name );
+
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                CloseConnection();
+
+                return sql;
+            }
+            catch (MySqlException me)
+            {
+                CloseConnection();
+                //return false;
+                return "fudeu";
+            }
+
+        }
+
         //public bool newClient(string cliente, bool deve)
         //{
 
         //}
-        
+
         public string newClient(string cliente,bool deve)
         {
             

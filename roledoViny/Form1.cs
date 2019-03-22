@@ -51,17 +51,22 @@ namespace roledoViny
 
         private void btnSlava_Click(object sender, EventArgs e)
         {
-            bool added = db.newProduct(txtName.Text, txtDetail.Text, txtCódigo.Text, (int)nmrQtd.Value, decimal.Parse(txtValue.Text));
+            bool added = db.newProduct(txtName.Text, txtDetail.Text, txtCódigo.Text, (int)nmrQtd.Value, double.Parse(txtValue.Text));
+
+            string value = txtValue.Text;
+            value = value.Replace(',', '.');
+
+            string sql = string.Format("INSERT INTO products(CodProd,Prod_name,Prod_Detail,Prod_val,Prod_qtd) VALUES('{0}','{1}','{2}','{3}',{4});", txtCódigo.Text, txtName.Text, txtDetail.Text, value, (int)nmrQtd.Value);
 
             if (added) {
                 CloseConnection();
-                MessageBox.Show("produto adicionado com sucesso");
+                MessageBox.Show(sql);
                 dtGridProds.Refresh();
                 updating();
             }
             else
             {
-                MessageBox.Show("Error");
+                MessageBox.Show(sql);
             }
 
         }
