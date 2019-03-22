@@ -1,0 +1,15 @@
+c:\users\deus\source\repos\roledoViny\roledoViny\bin\Debug\roledoViny.exe.config
+c:\users\deus\source\repos\roledoViny\roledoViny\bin\Debug\roledoViny.exe
+c:\users\deus\source\repos\roledoViny\roledoViny\bin\Debug\roledoViny.pdb
+c:\users\deus\source\repos\roledoViny\roledoViny\bin\Debug\MySql.Data.dll
+c:\users\deus\source\repos\roledoViny\roledoViny\bin\Debug\Google.Protobuf.dll
+c:\users\deus\source\repos\roledoViny\roledoViny\bin\Debug\MySql.Data.xml
+c:\users\deus\source\repos\roledoViny\roledoViny\obj\Debug\roledoViny.csprojAssemblyReference.cache
+c:\users\deus\source\repos\roledoViny\roledoViny\obj\Debug\roledoViny.Form1.resources
+c:\users\deus\source\repos\roledoViny\roledoViny\obj\Debug\roledoViny.Properties.Resources.resources
+c:\users\deus\source\repos\roledoViny\roledoViny\obj\Debug\roledoViny.csproj.GenerateResource.cache
+c:\users\deus\source\repos\roledoViny\roledoViny\obj\Debug\roledoViny.csproj.CoreCompileInputs.cache
+c:\users\deus\source\repos\roledoViny\roledoViny\obj\Debug\roledoViny.csproj.CopyComplete
+c:\users\deus\source\repos\roledoViny\roledoViny\obj\Debug\roledoViny.exe
+c:\users\deus\source\repos\roledoViny\roledoViny\obj\Debug\roledoViny.pdb
+c:\users\deus\source\repos\roledoViny\roledoViny\obj\Debug\roledoViny.newBuy.resources
