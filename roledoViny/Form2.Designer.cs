@@ -38,12 +38,14 @@
             this.btnCadastro = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblGasto = new System.Windows.Forms.Label();
-            this.lblRenda = new System.Windows.Forms.Label();
-            this.lblLucro = new System.Windows.Forms.Label();
-            this.gasto = new System.Windows.Forms.Label();
-            this.renda = new System.Windows.Forms.Label();
             this.lucro = new System.Windows.Forms.Label();
+            this.renda = new System.Windows.Forms.Label();
+            this.gasto = new System.Windows.Forms.Label();
+            this.lblLucro = new System.Windows.Forms.Label();
+            this.lblRenda = new System.Windows.Forms.Label();
+            this.lblGasto = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +53,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(518, 467);
+            this.label1.Location = new System.Drawing.Point(527, 467);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(284, 70);
             this.label1.TabIndex = 0;
@@ -102,7 +104,7 @@
             this.listBox1.ForeColor = System.Drawing.SystemColors.Desktop;
             this.listBox1.FormattingEnabled = true;
             this.listBox1.ItemHeight = 25;
-            this.listBox1.Location = new System.Drawing.Point(457, 120);
+            this.listBox1.Location = new System.Drawing.Point(493, 116);
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(201, 179);
             this.listBox1.TabIndex = 4;
@@ -111,7 +113,7 @@
             // btnCadastro
             // 
             this.btnCadastro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastro.Location = new System.Drawing.Point(20, 467);
+            this.btnCadastro.Location = new System.Drawing.Point(15, 467);
             this.btnCadastro.Name = "btnCadastro";
             this.btnCadastro.Size = new System.Drawing.Size(167, 109);
             this.btnCadastro.TabIndex = 5;
@@ -122,7 +124,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(220, 467);
+            this.button1.Location = new System.Drawing.Point(187, 467);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(167, 109);
             this.button1.TabIndex = 6;
@@ -144,49 +146,16 @@
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
-            // lblGasto
+            // lucro
             // 
-            this.lblGasto.AutoSize = true;
-            this.lblGasto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGasto.Location = new System.Drawing.Point(10, 19);
-            this.lblGasto.Name = "lblGasto";
-            this.lblGasto.Size = new System.Drawing.Size(144, 39);
-            this.lblGasto.TabIndex = 8;
-            this.lblGasto.Text = "Gastos:";
-            this.lblGasto.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblRenda
-            // 
-            this.lblRenda.AutoSize = true;
-            this.lblRenda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRenda.Location = new System.Drawing.Point(10, 74);
-            this.lblRenda.Name = "lblRenda";
-            this.lblRenda.Size = new System.Drawing.Size(134, 39);
-            this.lblRenda.TabIndex = 9;
-            this.lblRenda.Text = "Renda:";
-            this.lblRenda.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // lblLucro
-            // 
-            this.lblLucro.AutoSize = true;
-            this.lblLucro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLucro.Location = new System.Drawing.Point(10, 135);
-            this.lblLucro.Name = "lblLucro";
-            this.lblLucro.Size = new System.Drawing.Size(144, 39);
-            this.lblLucro.TabIndex = 10;
-            this.lblLucro.Text = "Lucros:";
-            this.lblLucro.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // gasto
-            // 
-            this.gasto.AutoSize = true;
-            this.gasto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gasto.Location = new System.Drawing.Point(171, 19);
-            this.gasto.Name = "gasto";
-            this.gasto.Size = new System.Drawing.Size(161, 39);
-            this.gasto.TabIndex = 11;
-            this.gasto.Text = "R$ 00,00";
-            this.gasto.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.lucro.AutoSize = true;
+            this.lucro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lucro.Location = new System.Drawing.Point(171, 135);
+            this.lucro.Name = "lucro";
+            this.lucro.Size = new System.Drawing.Size(159, 38);
+            this.lucro.TabIndex = 13;
+            this.lucro.Text = "R$ 00,00";
+            this.lucro.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // renda
             // 
@@ -194,27 +163,84 @@
             this.renda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.renda.Location = new System.Drawing.Point(171, 74);
             this.renda.Name = "renda";
-            this.renda.Size = new System.Drawing.Size(161, 39);
+            this.renda.Size = new System.Drawing.Size(159, 38);
             this.renda.TabIndex = 12;
             this.renda.Text = "R$ 00,00";
             this.renda.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
-            // lucro
+            // gasto
             // 
-            this.lucro.AutoSize = true;
-            this.lucro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lucro.Location = new System.Drawing.Point(171, 135);
-            this.lucro.Name = "lucro";
-            this.lucro.Size = new System.Drawing.Size(161, 39);
-            this.lucro.TabIndex = 13;
-            this.lucro.Text = "R$ 00,00";
-            this.lucro.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            this.gasto.AutoSize = true;
+            this.gasto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gasto.Location = new System.Drawing.Point(171, 19);
+            this.gasto.Name = "gasto";
+            this.gasto.Size = new System.Drawing.Size(159, 38);
+            this.gasto.TabIndex = 11;
+            this.gasto.Text = "R$ 00,00";
+            this.gasto.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblLucro
+            // 
+            this.lblLucro.AutoSize = true;
+            this.lblLucro.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLucro.Location = new System.Drawing.Point(10, 135);
+            this.lblLucro.Name = "lblLucro";
+            this.lblLucro.Size = new System.Drawing.Size(139, 38);
+            this.lblLucro.TabIndex = 10;
+            this.lblLucro.Text = "Lucros:";
+            this.lblLucro.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblRenda
+            // 
+            this.lblRenda.AutoSize = true;
+            this.lblRenda.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRenda.Location = new System.Drawing.Point(10, 74);
+            this.lblRenda.Name = "lblRenda";
+            this.lblRenda.Size = new System.Drawing.Size(132, 38);
+            this.lblRenda.TabIndex = 9;
+            this.lblRenda.Text = "Renda:";
+            this.lblRenda.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // lblGasto
+            // 
+            this.lblGasto.AutoSize = true;
+            this.lblGasto.Font = new System.Drawing.Font("Arial Rounded MT Bold", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGasto.Location = new System.Drawing.Point(10, 19);
+            this.lblGasto.Name = "lblGasto";
+            this.lblGasto.Size = new System.Drawing.Size(141, 38);
+            this.lblGasto.TabIndex = 8;
+            this.lblGasto.Text = "Gastos:";
+            this.lblGasto.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(359, 467);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(167, 109);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Realizar Pagamento";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(655, 12);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(167, 67);
+            this.button3.TabIndex = 9;
+            this.button3.Text = "Adicionar Gastos";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(834, 604);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnCadastro);
@@ -251,5 +277,7 @@
         private System.Windows.Forms.Label lblLucro;
         private System.Windows.Forms.Label lblRenda;
         private System.Windows.Forms.Label lblGasto;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }

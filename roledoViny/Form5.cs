@@ -73,8 +73,18 @@ namespace roledoViny
         private void cbbNames_SelectedIndexChanged(object sender, EventArgs e)
         {
             string sql = string.Format("select * from clients where Client_name='{0}'", cbbNames.Text);
-
+            
             MySqlCommand cmd = new MySqlCommand(sql, conn);
+
+            try
+            {
+                conn.Open();
+            }
+            catch (Exception ex)
+            {
+
+            }
+
 
             MySqlDataReader r = cmd.ExecuteReader();
             DataTable ft = new System.Data.DataTable();
@@ -104,15 +114,17 @@ namespace roledoViny
         {
             if (payment(double.Parse(txtTroco.Text)) == true)
             {
-                if (troco<0)
+                if (troco < 0)
                 {
-                    MessageBox.Show("menor");
-                    updateUser(cbbNames.Text,true,troco);
+
+                    updateUser(cbbNames.Text, true, (troco*-1).ToString());
+                    MessageBox.Show("Faltam R$ "+txtTroco.Text.Replace('-','.'));
+
                 }
                 else
                 {
-                    updateUser(cbbNames.Text, false, 00.00);
-                    MessageBox.Show("maior");
+                   updateUser(cbbNames.Text, false, 00.00.ToString());
+                   MessageBox.Show("Troco é de R$ "+txtTroco.Text,"Compra Feita");
                 }
             }
             else
@@ -123,37 +135,37 @@ namespace roledoViny
 
         }
 
-        private bool updateUser(string clientName,bool deve,double valor)
+        private bool updateUser(string clientName, bool deve, string valor)
         {
-            valor = valor * -1;
-            string value = txtPay.Text;
-            value = value.Replace('.', ',');
-
+            string value = valor;
+            value = value.Replace(',', '.');
+                        
             conn.Open();
-            string sql = string.Format("UPDATE clients SET deve={0},qntDeve='{1}' WHERE Client_name='{2}';", deve,valor,clientName);
+            string sql = string.Format("UPDATE clients SET deve={0},qntDeve='{1}' WHERE Client_name='{2}';", deve, value, clientName);
 
             MessageBox.Show(sql);
             try
             {
-                
-                    //create mysql command
-                    MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    //Assign the query using CommandText
-                    cmd.CommandText = sql;
-                    //Assign the connection using Connection
-                    cmd.Connection = conn;
 
-                    //Execute query
-                    cmd.ExecuteNonQuery();
+                //create mysql command
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Assign the query using CommandText
+                cmd.CommandText = sql;
+                //Assign the connection using Connection
+                cmd.Connection = conn;
 
-                    //close connection
-                    conn.Close();
-                    
-                
+                //Execute query
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                conn.Close();
+
+
                 return true;
             }
             catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
@@ -172,20 +184,27 @@ namespace roledoViny
                 {
                     result = double.Parse(r["blc_Income"].ToString());
                 }
-            }catch(Exception ex)
+
+
+                conn.Close();
+                return result;
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
+                return result;
             }
 
 
 
-            return result;
+
         }
 
 
         private bool payment(double troco)
         {
-            troco = troco + soma();
+            pago = double.Parse(txtPay.Text);
+            troco = pago + soma();
 
             string value = troco.ToString();
             value = value.Replace(',', '.');
@@ -195,24 +214,26 @@ namespace roledoViny
             MessageBox.Show(sql);
             try
             {
-                if (this.Open() == true)
-                {
-                    //create mysql command
-                    //MySqlCommand cmd = new MySqlCommand(sql, conn);
-                    //Assign the query using CommandText
-                    //cmd.CommandText = sql;
-                    //Assign the connection using Connection
-                    //cmd.Connection = conn;
+                conn.Open();
 
-                    //Execute query
-                    //cmd.ExecuteNonQuery();
+                //create mysql command
+                MySqlCommand cmd = new MySqlCommand(sql, conn);
+                //Assign the query using CommandText
+                cmd.CommandText = sql;
+                //Assign the connection using Connection
+                cmd.Connection = conn;
 
-                    //close connection
-                    //conn.Close();
-                }
+                //Execute query
+                cmd.ExecuteNonQuery();
+
+                //close connection
+                conn.Close();
+
                 return true;
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.ToString());
                 return false;
             }
         }
@@ -227,6 +248,7 @@ namespace roledoViny
                 troco = pago - compra;
 
                 txtTroco.Text = troco.ToString("00.00");
+                button1.Enabled = true;
             }
         }
     }

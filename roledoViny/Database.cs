@@ -11,10 +11,6 @@ namespace roledoViny
     {
 
         private MySqlConnection conn;
-        private string server;
-        private string database;
-        private string username;
-        private string password;
 
         public Database()
         {
@@ -55,10 +51,10 @@ namespace roledoViny
 
         private void Initialize()
         {
-            server = "localhost";
-            database = "tupperviny";
-            username = "root";
-            password = "1234";
+            string server = "localhost";
+            string database = "tupperviny";
+            string username = "root";
+            string password = "1234";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + username + ";" + "PASSWORD=" + password + ";";
 
@@ -117,7 +113,7 @@ namespace roledoViny
 
         //}
 
-        public string newClient(string cliente,bool deve)
+        public string newClient(string cliente,bool deve, string qntDeve)
         {
             
 
@@ -125,7 +121,7 @@ namespace roledoViny
             {
                 OpenConnection();
 
-                string sql = string.Format("INSERT INTO clients(Client_name,deve) VALUES('{0}',{1});", cliente, deve);
+                string sql = string.Format("INSERT INTO clients(Client_name,deve,qntDeve) VALUES('{0}',{1},'{2}');", cliente, deve, qntDeve.Replace(',', '.'));
 
                 MySqlCommand cmd = new MySqlCommand(sql, conn);
                 cmd.ExecuteNonQuery();

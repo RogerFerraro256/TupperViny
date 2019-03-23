@@ -96,14 +96,13 @@ namespace roledoViny
             rdbClient.Checked = false;
             rdbProduct.Checked = false;
 
+            gpbAllClients.Visible = false;
+            dpbAllProd.Visible = true;
+
             gpbClient.Visible = false;
             gpbProduct.Visible = false;
 
-            if (conectionAndView() == true)
-            {
-                updating();
-                //conn.Close();
-            }
+            
 
         }
 
@@ -140,7 +139,7 @@ namespace roledoViny
 
         private void btnClient_Click(object sender, EventArgs e)
         {
-            if (db.newClient(txtClient.Text,cbDeve.Checked) =="foi")
+            if (db.newClient(txtClient.Text,cbDeve.Checked,txtDeve.Text) =="foi")
             {
                 MessageBox.Show("Cliente adicionado");
                 dataGridView1.Refresh();
@@ -150,7 +149,7 @@ namespace roledoViny
             else
             {
                 
-                MessageBox.Show(db.newClient(txtClient.Text, cbDeve.Checked));
+                MessageBox.Show(db.newClient(txtClient.Text, cbDeve.Checked, txtDeve.Text));
             }
         }
 
@@ -179,6 +178,33 @@ namespace roledoViny
         private void button3_Click(object sender, EventArgs e)
         {
             new Form5().Show();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (conectionAndView() == true)
+            {
+                updating();
+                //conn.Close();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            new Form6().Show();
+        }
+
+        private void cbDeve_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbDeve.CheckState == CheckState.Checked)
+            {
+                txtDeve.Enabled = true;
+            }
+            else
+            {
+                txtDeve.Text = "";
+                txtDeve.Enabled = false;
+            }
         }
     }
 }

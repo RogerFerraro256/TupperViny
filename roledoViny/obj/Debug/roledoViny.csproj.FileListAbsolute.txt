@@ -32,3 +32,5 @@ C:\Users\Deus\Documents\repositorios\TupperViny\roledoViny\obj\Debug\roledoViny.
 C:\Users\Deus\Documents\repositorios\TupperViny\roledoViny\obj\Debug\roledoViny.Form3.resources
 C:\Users\Deus\Documents\repositorios\TupperViny\roledoViny\obj\Debug\roledoViny.Form4.resources
 C:\Users\Deus\Documents\repositorios\TupperViny\roledoViny\obj\Debug\roledoViny.Form5.resources
+C:\Users\Deus\Documents\repositorios\TupperViny\roledoViny\obj\Debug\roledoViny.Form6.resources
+C:\Users\Deus\Documents\repositorios\TupperViny\roledoViny\obj\Debug\roledoViny.gastos.resources

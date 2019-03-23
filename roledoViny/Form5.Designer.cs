@@ -88,7 +88,7 @@
             this.txtPay.Name = "txtPay";
             this.txtPay.Size = new System.Drawing.Size(100, 34);
             this.txtPay.TabIndex = 5;
-            this.txtPay.Text = "00,02";
+            this.txtPay.Text = "00,00";
             this.txtPay.Enter += new System.EventHandler(this.txtPay_Enter);
             this.txtPay.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPay_KeyDown);
             // 
@@ -110,10 +110,11 @@
             this.txtTroco.Name = "txtTroco";
             this.txtTroco.Size = new System.Drawing.Size(100, 34);
             this.txtTroco.TabIndex = 7;
-            this.txtTroco.Text = "00,02";
+            this.txtTroco.Text = "00,00";
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(19, 225);

@@ -18,6 +18,19 @@ CREATE SCHEMA IF NOT EXISTS `tupperviny` DEFAULT CHARACTER SET utf8 ;
 USE `tupperviny` ;
 
 -- -----------------------------------------------------
+-- Table `tupperviny`.`balanco`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `tupperviny`.`balanco` (
+  `idBalanco` INT(11) NOT NULL AUTO_INCREMENT,
+  `blc_Gasto` DECIMAL(10,2) NULL DEFAULT NULL,
+  `blc_Income` DECIMAL(10,2) NULL DEFAULT NULL,
+  PRIMARY KEY (`idBalanco`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 2
+DEFAULT CHARACTER SET = utf8;
+
+
+-- -----------------------------------------------------
 -- Table `tupperviny`.`clients`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `tupperviny`.`clients` (
@@ -27,7 +40,7 @@ CREATE TABLE IF NOT EXISTS `tupperviny`.`clients` (
   `qntDeve` DECIMAL(10,2) NULL DEFAULT NULL,
   PRIMARY KEY (`idClients`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 5
+AUTO_INCREMENT = 7
 DEFAULT CHARACTER SET = utf8;
 
 
@@ -53,6 +66,3 @@ DEFAULT CHARACTER SET = utf8;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-use tupperviny;
-show tables;

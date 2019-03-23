@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.txtCódigo = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtDetail = new System.Windows.Forms.TextBox();
@@ -58,6 +59,10 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button4 = new System.Windows.Forms.Button();
+            this.txtDeve = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.nmrQtd)).BeginInit();
             this.gpbProduct.SuspendLayout();
             this.gpbClient.SuspendLayout();
@@ -71,7 +76,7 @@
             // txtCódigo
             // 
             this.txtCódigo.Location = new System.Drawing.Point(105, 38);
-            this.txtCódigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCódigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCódigo.Name = "txtCódigo";
             this.txtCódigo.Size = new System.Drawing.Size(132, 22);
             this.txtCódigo.TabIndex = 0;
@@ -79,7 +84,7 @@
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(105, 75);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(132, 22);
             this.txtName.TabIndex = 1;
@@ -87,7 +92,7 @@
             // txtDetail
             // 
             this.txtDetail.Location = new System.Drawing.Point(105, 111);
-            this.txtDetail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDetail.Margin = new System.Windows.Forms.Padding(4);
             this.txtDetail.Name = "txtDetail";
             this.txtDetail.Size = new System.Drawing.Size(132, 22);
             this.txtDetail.TabIndex = 2;
@@ -95,7 +100,7 @@
             // nmrQtd
             // 
             this.nmrQtd.Location = new System.Drawing.Point(105, 144);
-            this.nmrQtd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.nmrQtd.Margin = new System.Windows.Forms.Padding(4);
             this.nmrQtd.Name = "nmrQtd";
             this.nmrQtd.Size = new System.Drawing.Size(48, 22);
             this.nmrQtd.TabIndex = 3;
@@ -103,7 +108,7 @@
             // txtValue
             // 
             this.txtValue.Location = new System.Drawing.Point(105, 176);
-            this.txtValue.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtValue.Margin = new System.Windows.Forms.Padding(4);
             this.txtValue.Name = "txtValue";
             this.txtValue.Size = new System.Drawing.Size(132, 22);
             this.txtValue.TabIndex = 4;
@@ -111,7 +116,7 @@
             // btnSlava
             // 
             this.btnSlava.Location = new System.Drawing.Point(105, 206);
-            this.btnSlava.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSlava.Margin = new System.Windows.Forms.Padding(4);
             this.btnSlava.Name = "btnSlava";
             this.btnSlava.Size = new System.Drawing.Size(133, 48);
             this.btnSlava.TabIndex = 5;
@@ -132,10 +137,10 @@
             this.gpbProduct.Controls.Add(this.label1);
             this.gpbProduct.Controls.Add(this.nmrQtd);
             this.gpbProduct.Controls.Add(this.txtValue);
-            this.gpbProduct.Location = new System.Drawing.Point(41, 47);
-            this.gpbProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbProduct.Location = new System.Drawing.Point(41, 63);
+            this.gpbProduct.Margin = new System.Windows.Forms.Padding(4);
             this.gpbProduct.Name = "gpbProduct";
-            this.gpbProduct.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbProduct.Padding = new System.Windows.Forms.Padding(4);
             this.gpbProduct.Size = new System.Drawing.Size(247, 286);
             this.gpbProduct.TabIndex = 6;
             this.gpbProduct.TabStop = false;
@@ -193,16 +198,18 @@
             // 
             // gpbClient
             // 
+            this.gpbClient.Controls.Add(this.label8);
+            this.gpbClient.Controls.Add(this.txtDeve);
             this.gpbClient.Controls.Add(this.label7);
             this.gpbClient.Controls.Add(this.cbDeve);
             this.gpbClient.Controls.Add(this.btnClient);
             this.gpbClient.Controls.Add(this.label6);
             this.gpbClient.Controls.Add(this.txtClient);
-            this.gpbClient.Location = new System.Drawing.Point(43, 47);
-            this.gpbClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbClient.Location = new System.Drawing.Point(43, 63);
+            this.gpbClient.Margin = new System.Windows.Forms.Padding(4);
             this.gpbClient.Name = "gpbClient";
-            this.gpbClient.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gpbClient.Size = new System.Drawing.Size(321, 169);
+            this.gpbClient.Padding = new System.Windows.Forms.Padding(4);
+            this.gpbClient.Size = new System.Drawing.Size(321, 198);
             this.gpbClient.TabIndex = 7;
             this.gpbClient.TabStop = false;
             this.gpbClient.Text = "Adicionar Cliente";
@@ -210,27 +217,28 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 76);
+            this.label7.Location = new System.Drawing.Point(107, 76);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 17);
+            this.label7.Size = new System.Drawing.Size(49, 17);
             this.label7.TabIndex = 4;
-            this.label7.Text = "Ja pagou";
+            this.label7.Text = "Deve?";
             // 
             // cbDeve
             // 
             this.cbDeve.AutoSize = true;
             this.cbDeve.Location = new System.Drawing.Point(168, 78);
-            this.cbDeve.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbDeve.Margin = new System.Windows.Forms.Padding(4);
             this.cbDeve.Name = "cbDeve";
             this.cbDeve.Size = new System.Drawing.Size(18, 17);
             this.cbDeve.TabIndex = 3;
             this.cbDeve.UseVisualStyleBackColor = true;
+            this.cbDeve.CheckedChanged += new System.EventHandler(this.cbDeve_CheckedChanged);
             // 
             // btnClient
             // 
-            this.btnClient.Location = new System.Drawing.Point(44, 100);
-            this.btnClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnClient.Location = new System.Drawing.Point(44, 135);
+            this.btnClient.Margin = new System.Windows.Forms.Padding(4);
             this.btnClient.Name = "btnClient";
             this.btnClient.Size = new System.Drawing.Size(257, 48);
             this.btnClient.TabIndex = 2;
@@ -241,7 +249,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 50);
+            this.label6.Location = new System.Drawing.Point(40, 50);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(116, 17);
@@ -251,7 +259,7 @@
             // txtClient
             // 
             this.txtClient.Location = new System.Drawing.Point(168, 46);
-            this.txtClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtClient.Margin = new System.Windows.Forms.Padding(4);
             this.txtClient.Name = "txtClient";
             this.txtClient.Size = new System.Drawing.Size(132, 22);
             this.txtClient.TabIndex = 0;
@@ -259,8 +267,8 @@
             // rdbProduct
             // 
             this.rdbProduct.AutoSize = true;
-            this.rdbProduct.Location = new System.Drawing.Point(40, 14);
-            this.rdbProduct.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbProduct.Location = new System.Drawing.Point(40, 30);
+            this.rdbProduct.Margin = new System.Windows.Forms.Padding(4);
             this.rdbProduct.Name = "rdbProduct";
             this.rdbProduct.Size = new System.Drawing.Size(142, 21);
             this.rdbProduct.TabIndex = 8;
@@ -272,8 +280,8 @@
             // rdbClient
             // 
             this.rdbClient.AutoSize = true;
-            this.rdbClient.Location = new System.Drawing.Point(193, 14);
-            this.rdbClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbClient.Location = new System.Drawing.Point(193, 30);
+            this.rdbClient.Margin = new System.Windows.Forms.Padding(4);
             this.rdbClient.Name = "rdbClient";
             this.rdbClient.Size = new System.Drawing.Size(135, 21);
             this.rdbClient.TabIndex = 9;
@@ -286,7 +294,7 @@
             // 
             this.dtGridProds.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridProds.Location = new System.Drawing.Point(8, 23);
-            this.dtGridProds.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dtGridProds.Margin = new System.Windows.Forms.Padding(4);
             this.dtGridProds.Name = "dtGridProds";
             this.dtGridProds.Size = new System.Drawing.Size(647, 292);
             this.dtGridProds.TabIndex = 11;
@@ -294,10 +302,10 @@
             // dpbAllProd
             // 
             this.dpbAllProd.Controls.Add(this.dtGridProds);
-            this.dpbAllProd.Location = new System.Drawing.Point(388, 47);
-            this.dpbAllProd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dpbAllProd.Location = new System.Drawing.Point(388, 63);
+            this.dpbAllProd.Margin = new System.Windows.Forms.Padding(4);
             this.dpbAllProd.Name = "dpbAllProd";
-            this.dpbAllProd.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dpbAllProd.Padding = new System.Windows.Forms.Padding(4);
             this.dpbAllProd.Size = new System.Drawing.Size(663, 322);
             this.dpbAllProd.TabIndex = 12;
             this.dpbAllProd.TabStop = false;
@@ -307,10 +315,10 @@
             // 
             this.groupBox1.Controls.Add(this.viewClient);
             this.groupBox1.Controls.Add(this.viewProd);
-            this.groupBox1.Location = new System.Drawing.Point(396, -5);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(396, 11);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
             this.groupBox1.Size = new System.Drawing.Size(304, 62);
             this.groupBox1.TabIndex = 13;
             this.groupBox1.TabStop = false;
@@ -319,7 +327,7 @@
             // 
             this.viewClient.AutoSize = true;
             this.viewClient.Location = new System.Drawing.Point(160, 17);
-            this.viewClient.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.viewClient.Margin = new System.Windows.Forms.Padding(4);
             this.viewClient.Name = "viewClient";
             this.viewClient.Size = new System.Drawing.Size(144, 21);
             this.viewClient.TabIndex = 1;
@@ -332,7 +340,7 @@
             // 
             this.viewProd.AutoSize = true;
             this.viewProd.Location = new System.Drawing.Point(8, 17);
-            this.viewProd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.viewProd.Margin = new System.Windows.Forms.Padding(4);
             this.viewProd.Name = "viewProd";
             this.viewProd.Size = new System.Drawing.Size(151, 21);
             this.viewProd.TabIndex = 0;
@@ -344,10 +352,10 @@
             // gpbAllClients
             // 
             this.gpbAllClients.Controls.Add(this.dataGridView1);
-            this.gpbAllClients.Location = new System.Drawing.Point(391, 47);
-            this.gpbAllClients.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbAllClients.Location = new System.Drawing.Point(390, 63);
+            this.gpbAllClients.Margin = new System.Windows.Forms.Padding(4);
             this.gpbAllClients.Name = "gpbAllClients";
-            this.gpbAllClients.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gpbAllClients.Padding = new System.Windows.Forms.Padding(4);
             this.gpbAllClients.Size = new System.Drawing.Size(663, 322);
             this.gpbAllClients.TabIndex = 13;
             this.gpbAllClients.TabStop = false;
@@ -357,7 +365,7 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(8, 23);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(647, 292);
             this.dataGridView1.TabIndex = 11;
@@ -365,10 +373,10 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(43, 347);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Location = new System.Drawing.Point(43, 363);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(321, 71);
+            this.button1.Size = new System.Drawing.Size(321, 111);
             this.button1.TabIndex = 14;
             this.button1.Text = "Nova Compra";
             this.button1.UseVisualStyleBackColor = true;
@@ -377,9 +385,9 @@
             // button2
             // 
             this.button2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(396, 376);
+            this.button2.Location = new System.Drawing.Point(396, 392);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(287, 45);
+            this.button2.Size = new System.Drawing.Size(287, 85);
             this.button2.TabIndex = 15;
             this.button2.Text = "Alterar Produto";
             this.button2.UseVisualStyleBackColor = true;
@@ -388,19 +396,55 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(720, 376);
+            this.button3.Location = new System.Drawing.Point(782, 14);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(287, 45);
+            this.button3.Size = new System.Drawing.Size(271, 45);
             this.button3.TabIndex = 16;
             this.button3.Text = "Realizar Pagamento";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button4
+            // 
+            this.button4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(724, 392);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(287, 85);
+            this.button4.TabIndex = 17;
+            this.button4.Text = "Alterar Cliente";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // txtDeve
+            // 
+            this.txtDeve.Enabled = false;
+            this.txtDeve.Location = new System.Drawing.Point(168, 105);
+            this.txtDeve.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDeve.Name = "txtDeve";
+            this.txtDeve.Size = new System.Drawing.Size(132, 22);
+            this.txtDeve.TabIndex = 5;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(61, 108);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(95, 17);
+            this.label8.TabIndex = 6;
+            this.label8.Text = "quanto deve?";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 433);
+            this.ClientSize = new System.Drawing.Size(1064, 489);
+            this.Controls.Add(this.button4);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
@@ -411,7 +455,7 @@
             this.Controls.Add(this.gpbClient);
             this.Controls.Add(this.gpbProduct);
             this.Controls.Add(this.groupBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "TupperViny";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -463,6 +507,10 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtDeve;
     }
 }
 

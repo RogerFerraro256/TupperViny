@@ -23,7 +23,6 @@ namespace roledoViny
             setdate.Enabled = true;
             Initialize();
             
-            populate();
             
         }
 
@@ -74,6 +73,8 @@ namespace roledoViny
             label1.Text = hourMinute;
             label2.Text = date;
 
+
+            populate();
             mudaLabel();
         }
 
@@ -116,6 +117,16 @@ namespace roledoViny
         private void btnCadastro_Click(object sender, EventArgs e)
         {
             new Form1().Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            new Form5().Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            new gastos().Show();
         }
     }
 }

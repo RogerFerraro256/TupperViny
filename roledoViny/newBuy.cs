@@ -20,17 +20,13 @@ namespace roledoViny
         }
 
         private MySqlConnection conn;
-        private string server;
-        private string database;
-        private string username;
-        private string password;
 
         private void Initialize()
         {
-            server = "localhost";
-            database = "tupperviny";
-            username = "root";
-            password = "1234";
+            string server = "localhost";
+            string database = "tupperviny";
+            string username = "root";
+            string password = "1234";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + username + ";" + "PASSWORD=" + password + ";";
 
